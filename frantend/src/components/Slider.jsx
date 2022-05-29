@@ -26,7 +26,7 @@ function Slider() {
     }
   };
   return (
-    <div className="mt-10 h-[540px] bg-white flex items-center justify-between">
+    <div className="mt-5 h-[600px] bg-white flex items-center justify-between">
       <div className={arrowStyle}>
         <ArrowBackIosIcon style={{ fontSize: "50px" }} onClick={prvSlide} />
       </div>
@@ -35,7 +35,7 @@ function Slider() {
           return (
             <div
               className={
-                `wrapper flex w-[100%] h-[500px] justify-center items-center shadow-2xl rounded-lg border-[#c0c0c0] border[10px] overflow-hidden relative ` +
+                `wrapper flex w-[100%] h-[550px] justify-center items-center shadow-2xl rounded-lg border-[#c0c0c0] border[10px] overflow-hidden relative ` +
                 slide.background
               }
             >
