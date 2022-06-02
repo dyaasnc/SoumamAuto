@@ -5,7 +5,7 @@ import { Badge } from "@mui/material";
 
 function NavBar() {
   return (
-    <div className="navbar h-[60px] shadow-md relative z-10">
+    <div className="navbar h-[60px] shadow-lg shadow-blue-400 relative z-10">
       <div className="wrapper px-[20px] py-[20px] flex justify-between items-center">
         <div className="left flex flex-1 items-center">
           <div className="logo cursor-pointer text-lg font-bold ">
