@@ -5,7 +5,7 @@ import LocalPostOfficeSharpIcon from "@mui/icons-material/LocalPostOfficeSharp";
 
 function Footer() {
   return (
-    <div className="flex items-center justify-around p-2">
+    <div className="flex items-center justify-around p-2 self-end">
       <div className="flex-1 flex flex-col flex-wrap p-2">
         <h1 className="text-[25px]">SoumamAuto</h1>
         <p className="text-justify">
@@ -26,17 +26,17 @@ function Footer() {
 
       <div className="flex-1 pl-5">
         <div className="flex">
-          <LocationOnSharpIcon />
+          <LocationOnSharpIcon className=" text-blue-400" />
           <a className="pl-2" href="">
             Dergana Bourdj El-Kiffan
           </a>
         </div>
         <div className="flex">
-          <LocalPhoneSharpIcon />
+          <LocalPhoneSharpIcon className=" text-blue-400" />
           <p className="pl-2">021 21 21 21</p>
         </div>
         <div>
-          <LocalPostOfficeSharpIcon />
+          <LocalPostOfficeSharpIcon className=" text-blue-400" />
           <a className="pl-2" href="https://mail.google.com/mail/u/0/#inbox">
             dyaasenouci@gmail.com
           </a>
