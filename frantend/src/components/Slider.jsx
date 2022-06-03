@@ -26,7 +26,7 @@ function Slider() {
     }
   };
   return (
-    <div className="mt-5 h-[600px] bg-white flex items-center justify-between">
+    <div className="mt-5 h-[600px] bg-white flex items-center justify-between mobile:hidden">
       <div className={arrowStyle}>
         <ArrowBackIosIcon style={{ fontSize: "50px" }} onClick={prvSlide} />
       </div>

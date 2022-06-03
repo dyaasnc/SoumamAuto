@@ -11,18 +11,18 @@ function Cart() {
       <NavBar />
       <div className="m-4">
         <div className="flex justify-center text-5xl">Cart</div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-4 mobile:flex-col">
           <button className="btn bg-white text-blue-400 border-2 border-blue-400 hover:bg-white">
             continue shopping
           </button>
-          <div className="flex underline text-lg hover:cursor-pointer">
+          <div className="flex underline text-lg hover:cursor-pointer mobile:m-3">
             <p className="mr-5">items in your Cart: 5</p>
             <p>wishList items</p>
           </div>
           <button className="btn ">checkout</button>
         </div>
 
-        <div className="flex mt-7">
+        <div className="flex mt-7 mobile:flex-col">
           <div className="flex flex-col flex-1  ">
             {/* list of products */}
             <div className="flex w-[100%] h-auto items-center ">
