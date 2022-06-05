@@ -1,17 +1,17 @@
 import { useState } from "react";
 import React from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  //   remember to add maximun limit :)
+function Counter(props) {
   const increment = () => {
-    setCount((count) => count + 1);
+    props.setOpr("plus")
+    props.setCount( props.count + 1);
   };
   const decrement = () => {
-    if (count <= 0) {
+    props.setOpr("minus")
+    if (props.count <= 0) {
       return;
     } else {
-      setCount((count) => count - 1);
+      props.setCount((count) => count - 1);
     }
   };
 
@@ -27,9 +27,9 @@ function Counter() {
         </div>
         <div
           className="border-2 border-blue-400 w-8 flex justify-center items-center sho"
-          onc
+          
         >
-          {count}
+          {props.count}
         </div>
         <div
           className=" bg-blue-400 flex items-center justify-center cursor-pointer rounded-r-md text-white w-8"

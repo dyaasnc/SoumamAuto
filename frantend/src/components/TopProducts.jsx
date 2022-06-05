@@ -5,7 +5,7 @@ import Product from "./Product";
 function Products() {
   return (
     <div className="flex flex-wrap p-5 ">
-      {ApiTopPrdcts.map((product, index) => (
+      {ApiTopPrdcts.slice(0,4).map((product, index) => (
         <Product item={product} key={index} />
       ))}
     </div>

@@ -3,6 +3,7 @@ import { React, useState } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import FavoriteSharpIcon from "@mui/icons-material/FavoriteSharp";
 
+
 function Product({ item }) {
   const [hoverEffect, setHoverEffect] = useState("opacity-0");
 
@@ -13,16 +14,21 @@ function Product({ item }) {
     setHoverEffect(" opacity-0");
   };
 
-  const iconStyle =
-    "h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100 ";
+  const iconStyle ='h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
 
   return (
     <div
-      className="flex flex-1 items-center justify-center min-w-[245px] min-h-[245px] overflow-hidden rounded-md shadow-lg m-2 relative"
+      className="flex flex-1 items-center justify-center min-w-[245px] min-h-[245px] overflow-hidden rounded-lg shadow-lg m-2 relative"
       onMouseEnter={handleHoverEnter}
       onMouseLeave={handleHoverExit}
     >
+      <div>
       <img src={item.src} alt="product_image" />
+      <div className="flex  flex-col items-center text-white bg-blue-400">
+      <p className="text-2xl font-bold">{item.product}</p>
+      <p className="text-2xl font-semibold">Price: {item.price}DA</p>
+      </div>
+      </div>
       <div
         className={
           `flex items-center justify-center w-[100%] h-[100%] absolute ease-in duration-100 ` +
@@ -31,14 +37,14 @@ function Product({ item }) {
       >
         {/*icon */}
         <div className={iconStyle}>
-          <ShoppingCartIcon />
+          <ShoppingCartIcon/>
         </div>
         <div className={iconStyle}>
           <FavoriteSharpIcon />
         </div>
-        <div className={iconStyle}>
+        {/* <div className={iconStyle}>
           <SearchSharpIcon />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Announce from "../components/Announce";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import Products from "../components/Products";
+import TopProducts from "../components/TopProducts";
 import Slider from "../components/Slider";
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
       <NavBar />
       <Slider />
       <Categories />
-      <Products />
+      <TopProducts />
       <Footer />
     </div>
   );
