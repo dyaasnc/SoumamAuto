@@ -6,9 +6,9 @@ function CartItem(props) {
   const [opr , setOpr] = useState("");
   useEffect(() => {
     if(opr === "plus"){
-props.setSum((s) => s + (props.price * count))
+props.setSum((s) => s + (props.price))
     }else if(opr === "minus") {
-props.setSum((s) => s - (props.price * count))
+props.setSum((s) => s - (props.price))
     }
     
   } , [count])
@@ -32,7 +32,8 @@ props.setSum((s) => s - (props.price * count))
               <div className="  flex flex-col justify-center items-center flex-auto">
                 <Counter count={count} setCount={setCount} setOpr={setOpr} />
                 <p className="mt-3 font-bold">
-                  PRIX :<b className="ml-2 text-xl">{props.price * count}</b>
+                  PRIX :<b className="ml-2 text-xl">{props.price * count} </b>
+                  DA
                 </p>
               </div>
                 <hr className="mt-7 mb-7" />
