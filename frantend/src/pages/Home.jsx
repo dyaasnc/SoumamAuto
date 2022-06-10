@@ -1,6 +1,6 @@
 import React from "react";
 import Announce from "../components/Announce";
-import Categories from "../components/categories";
+import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import TopProducts from "../components/TopProducts";

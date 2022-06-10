@@ -2,6 +2,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCartSharp";
 import { React, useState } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import FavoriteSharpIcon from "@mui/icons-material/FavoriteSharp";
+import { Link } from "react-router-dom";
 
 
 function Product({ item }) {
@@ -14,14 +15,16 @@ function Product({ item }) {
     setHoverEffect(" opacity-0");
   };
 
-  const iconStyle ='h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
+  const iconStyle ='h-[277] w-[444] rounded-full bg-white flex m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
 
   return (
     <div
       className="flex flex-1 items-center justify-center min-w-[245px] min-h-[245px] overflow-hidden rounded-lg shadow-lg m-2 relative"
       onMouseEnter={handleHoverEnter}
       onMouseLeave={handleHoverExit}
+
     >
+      <Link to={"/Product"}>
       <div>
       <img src={item.src} alt="product_image" />
       <div className="flex  flex-col items-center text-white bg-blue-400">
@@ -46,6 +49,7 @@ function Product({ item }) {
           <SearchSharpIcon />
         </div> */}
       </div>
+      </Link>
     </div>
   );
 }

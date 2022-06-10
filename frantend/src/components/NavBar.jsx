@@ -22,7 +22,7 @@ function NavBar() {
           <SearchIcon className="cursor-pointer " />
         </div>
         <div className="flex-1 flex items-center justify-end mobile:flex-[1.5] mobile:justify-center ">
-          <Link to={"/product"} className="cursor-pointer ml-10 text-[14px] font-medium mobile:ml-0">
+          <Link to={"/allProducts"} className="cursor-pointer ml-10 text-[14px] font-medium mobile:ml-0">
             Products
           </Link>
           <Link to={"/cart"} className="cursor-pointer ml-20 text-[14px] font-medium mobile:ml-3 pt-1 ">

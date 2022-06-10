@@ -3,11 +3,11 @@ import React from "react";
 
 function Counter(props) {
   const increment = () => {
-    props.setOpr("plus")
+    props.setOperation("plus")
     props.setCount( props.count + 1);
   };
   const decrement = () => {
-    props.setOpr("minus")
+    props.setOperation("minus")
     if (props.count <= 0) {
       return;
     } else {
