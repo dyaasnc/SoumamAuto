@@ -7,7 +7,7 @@ import {ItemsApi} from "../apifolder/CartItemApi"
      return( <div>
           <div className="flex justify-center text-5xl">Cart</div>
         <div className="flex items-center justify-between mt-4 mobile:flex-col">
-          <Link to={'/product'}>
+          <Link to={'/allProducts'}>
           <button className="btn bg-white text-blue-400 border-2 border-blue-400 hover:bg-white">
             continue shopping
           </button>

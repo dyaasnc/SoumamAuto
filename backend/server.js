@@ -17,6 +17,6 @@ http.createServer(function(request,responce){
         }
         responce.end();
     })
-}).listen(27017);
+}).listen(3000);
 
-console.log('Server running at http://localhost:27017/');
+console.log('Server running at http://localhost:3000/');

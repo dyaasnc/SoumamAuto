@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(rgb(6, 123, 190), rgb(6, 123, 190) 20%, white, white 100%); */
+    flex-direction: column;
+}
+
+
+
+
+.card {
+    margin-top: 10px;
+    position: relative;
+    width: 600px;
+    height: 380px;
+    background: rgb(228, 222, 222);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 1);
+    display: flex;
+    overflow: hidden;
+    transition: 0.5 ease-in-out;
+}
+
+
+.card .imgBx {
+    position: relative;
+    min-width: 300px;
+    height: 100%;
+    background: rgb(249, 248, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.card .imgBx img {
+    width: 300px;
+    transition: 0, 5s ease-in-out;
+}
+.card .imgBx:hover img {
+    transform: rotate(-35deg) translateX(-5px);
+}
+
+
+.card .details {
+    position: absolute;
+    left: 300px;
+    min-width: 300px;
+    height: 100%;
+    background: rgb(6, 123, 190);
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    padding: 10px;
+    flex-direction: column;
+    z-index: 1;
+    transition: 0, 5s ease-in-out;
+}
+
+
+/* .card .details::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+}
+
+.card .details::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+} */
+
+.card .details h3 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.card .details h5 {
+    margin-top: 5px;
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: none;
+    opacity: 0.85;
+}
+
+.card .details h4 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    line-height: 1em;
+}
+
+.card .details p {
+    margin-top: 5px;
+    color: white;
+    opacity: 0.85;
+    font-size: 1em;
+}
+
+.card .details .buy {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.card .details .buy h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.card .details .buy p {
+    font-weight: 300;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.card .details .buy #btnn {
+    display: inline-flex;
+    padding: 20px 25px;
+    padding-right: 20px;
+    background: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(12, 96, 145);
+    border-radius: 15%;
+    border: white;
+}
