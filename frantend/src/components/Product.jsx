@@ -1,11 +1,13 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartSharp";
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import FavoriteSharpIcon from "@mui/icons-material/FavoriteSharp";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 function Product({ item }) {
+
 const navigate = useNavigate();
 
 const handleClick = ()=>{
@@ -46,8 +48,8 @@ onClick={handleClick}
         }
       >
         {/*icon */}
-        <div className={iconStyle}>
-          <ShoppingCartIcon/>
+        <div className={iconStyle}  >
+          <ShoppingCartIcon />
         </div>
         <div className={iconStyle}>
           <FavoriteSharpIcon />
