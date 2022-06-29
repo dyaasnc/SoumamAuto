@@ -1,7 +1,11 @@
 import { useState } from "react";
 import React from "react";
+import CartContext from "../context/cart/CartContext";
+
 
 function Counter(props) {
+    
+
   const increment = () => {
     props.setOperation("plus")
     props.setCount( props.count + 1);

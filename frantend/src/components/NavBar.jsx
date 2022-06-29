@@ -1,12 +1,17 @@
-import React from "react";
+import {React,useContext} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 import {ItemsApi} from "../apifolder/CartItemApi"
 import { Link } from "react-router-dom";
+import CartContext from "../context/cart/CartContext";
+
+
 
 
 function NavBar() {
+    const {cartItems} = useContext(CartContext)
+
   return (
     <div className="navbar h-[60px] shadow-lg  shadow-blue-400 relative z-10">
       <div className="wrapper px-[20px] py-[20px] flex justify-between items-center mobile:p-0">
@@ -27,7 +32,7 @@ function NavBar() {
           </Link>
           <Link to={"/cart"} className="cursor-pointer ml-20 text-[14px] font-medium mobile:ml-3 pt-1 ">
             Cart
-            <Badge badgeContent={ItemsApi.length} color="primary">
+            <Badge badgeContent={cartItems.length} color="primary">
               <ShoppingCartIcon />
             </Badge>
           </Link>
