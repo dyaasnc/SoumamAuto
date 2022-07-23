@@ -14,6 +14,7 @@ props.setSum((s) => s + (ttlprc))
 props.setSum((s) => s - (ttlprc))
     }
   }, [count]);
+  
 
     return (<div className="flex w-[100%] h-auto items-center ">
               <div className="product flex self-start pl-5 overflow-hidden">

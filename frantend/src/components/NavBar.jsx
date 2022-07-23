@@ -11,7 +11,7 @@ import CartContext from "../context/cart/CartContext";
 
 function NavBar() {
     const {cartItems} = useContext(CartContext)
-
+   
   return (
     <div className="navbar h-[60px] shadow-lg  shadow-blue-400 relative z-10">
       <div className="wrapper px-[20px] py-[20px] flex justify-between items-center mobile:p-0">

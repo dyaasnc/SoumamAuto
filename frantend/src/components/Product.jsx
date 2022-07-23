@@ -1,13 +1,15 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartSharp";
-import { React, useEffect, useState } from "react";
-import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-import FavoriteSharpIcon from "@mui/icons-material/FavoriteSharp";
-import { Link, useNavigate } from "react-router-dom";
-
+import { React,useContext , useState } from "react";
+import {useNavigate } from "react-router-dom";
+import CartContext from "../context/cart/CartContext";
 
 
 function Product({ item }) {
-
+    const {addToCart} = useContext(CartContext)
+//   useEffect(()=>{
+// localStorage.setItem('cart',JSON.stringify(cartItems))
+// },[addToCart]);
+    
 const navigate = useNavigate();
 
 const handleClick = ()=>{
@@ -16,6 +18,7 @@ const handleClick = ()=>{
   const [hoverEffect, setHoverEffect] = useState("opacity-0");
 
   const handleHoverEnter = () => {
+    
     setHoverEffect(" opacity-1 bg-[rgba(0,0,0,0.2)]");
   };
   const handleHoverExit = () => {
@@ -24,12 +27,12 @@ const handleClick = ()=>{
   const iconStyle ='h-[40px] w-[40px] items-center justify-center rounded-full bg-white flex m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
 
   return (
-  <div
+  <div 
        
-      className="flex flex-1 items-center justify-center min-w-[245px] min-h-[245px] overflow-hidden rounded-lg shadow-lg m-2 relative"
+      className="flex flex-1 items-center justify-center min-w-[300px] min-h-[400px] overflow-hidden rounded-lg shadow-lg m-2 relative "
       onMouseEnter={handleHoverEnter}
       onMouseLeave={handleHoverExit}
-onClick={handleClick}
+
     >
      
       <div>
@@ -41,20 +44,23 @@ onClick={handleClick}
 
       </div>
 
-      <div
+      <div onClick={handleClick}
         className={
           `flex items-center justify-center w-[100%] h-[100%] absolute ease-in duration-100 ` +
           hoverEffect
+          
         }
       >
         {/*icon */}
-        <div className={iconStyle}  >
-          <ShoppingCartIcon />
+        <div  className={iconStyle}
+          >
+          <ShoppingCartIcon onClick={addToCart} />
+          
         </div>
-        <div className={iconStyle}>
+        {/* <div className={iconStyle}>
           <FavoriteSharpIcon />
         </div>
-        
+         */}
       </div>
 
     </div>

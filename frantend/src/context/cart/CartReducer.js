@@ -1,5 +1,10 @@
 import {ADD_TO_CART, REMOVE_ITEMS} from "../Types";
 
+
+
+
+
+
 const CartReducer = (state,action) =>{
     switch(action.type){
         case ADD_TO_CART : {

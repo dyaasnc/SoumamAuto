@@ -3,10 +3,11 @@ import { ApiTopPrdcts } from "../apifolder/TopProductsApi";
 import Product from "./Product";
 
 function Products() {
-  return (<div>
-      <h1 className="pt-5 text-center font-bold text-4xl mobile:text-2xl">some products</h1>
-    <div className="flex flex-wrap p-5 mx-[86px] ">
-      {ApiTopPrdcts.slice(0,4).map((product, index) => (
+  return (<div className="mx-[200px]">
+      <h1 className=" p-5 font-bold text-4xl mobile:text-2xl">some products</h1>
+      <div className=" h-1 w-[100%] bg-gray-200 "></div>
+    <div className="flex flex-wrap p-5  ">
+      {ApiTopPrdcts.slice(0,6).map((product, index) => (
         <Product item={product} key={index} />
       ))}
     </div>

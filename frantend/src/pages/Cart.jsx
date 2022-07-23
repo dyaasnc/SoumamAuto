@@ -10,26 +10,15 @@ import CartContext from "../context/cart/CartContext";
 
 function Cart() {
   const {cartItems} = useContext(CartContext);
-
+// useEffect(()=>{
+// localStorage.setItem('cart',JSON.stringify(cartItems))
+// },[cartItems])
+ 
   let navigate = useNavigate();
   const [sum, setSum] = useState(0);
-  const goBack = ()=>{navigate('/allProducts')};
-  const location = useLocation();
-  const item = location.state;
-  
-  
+  const goBack = ()=>{navigate('/allProducts')};   
 
- 
-  // useEffect(()=>{
-  //   localStorage.setItem('item',JSON.stringify(item))
-  // },[arr])
-
-
-  // const localItem = JSON.parse(localStorage.getItem('item'));
-
-    
-
-
+console.log(cartItems);
   return (
     <div>
       <Announce />

@@ -5,7 +5,7 @@ import Category from "./Category";
 
 function Categories() {
   return (
-    <div>
+    <div className="mb-[80px]">
       <h1 className="pt-5 text-center font-bold text-4xl mobile:text-2xl">
         Categories
       </h1>
