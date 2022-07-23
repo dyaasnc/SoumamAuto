@@ -11,15 +11,12 @@ import ProductP from "./pages/ProductP";
 
 function App() {
   return (
-    
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/cart" element={<Cart/>}/>
-      
       <Route path="/allProducts" element={<ProductsPage/>}/>
       <Route path= "/Product" element={<ProductP/>}/>
       </Routes>
-   
   );
 }
 

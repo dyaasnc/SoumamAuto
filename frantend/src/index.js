@@ -9,7 +9,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <CartState>
-
     <App />
     </CartState>
     </BrowserRouter>
