@@ -28,7 +28,7 @@ console.log(cartItems);
        <CartHeader goBack={goBack}/>
 
         <div className="flex mt-7 mobile:flex-col">
-            {/* {cartData.length>0 ?( */}
+            {/* {cartData.length -> 0 ?( */}
           <div className='flex flex-col flex-1'>
             {/* list of products */}
             {cartItems.map((item)=>{

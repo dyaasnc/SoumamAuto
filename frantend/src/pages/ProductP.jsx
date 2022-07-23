@@ -12,8 +12,7 @@ function ProductP (){
     const [items,setItems]=useState([])
     
     let navigate = useNavigate();
-    const handleClose =
-    ()=>{navigate(-1)};
+    const handleClose = ()=>{navigate(-1)};
     const location = useLocation()
     const data = location.state;
     // useEffect(()=>{
