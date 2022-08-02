@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useEffect} from "react";
 import React from "react";
 import CartContext from "../context/cart/CartContext";
 
 
 function Counter(props) {
-    
+    const {cartItems} = useContext(CartContext)
+   
 
   const increment = () => {
     props.setOperation("plus")
@@ -18,7 +19,7 @@ function Counter(props) {
       props.setCount((count) => count - 1);
     }
   };
-
+ 
   return (
     <div className="flex items-center justify-center text-2xl">
       Quantity

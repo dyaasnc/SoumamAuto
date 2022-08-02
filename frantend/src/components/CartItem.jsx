@@ -1,10 +1,15 @@
 import Counter from "./Counter";
 import { useState, useEffect,useContext } from "react";
 import CartContext from "../context/cart/CartContext";
-function CartItem(props) {
 
+
+
+
+function CartItem(props) {
+  
   const {removeItem ,updateItem, cartItems}= useContext(CartContext);
-  const [currentProduct , setCurrentProduct] = useState(cartItems.find(item => item.id === props.id))
+
+
   const [count, setCount] = useState(props.quantity);
   const [operation, setOperation] = useState("");
   const ttlprc = props.price * count;
@@ -22,10 +27,13 @@ function CartItem(props) {
      props.setSum((s) => s + (ttlprc))
     }else if(operation === "minus") {
       props.setSum((s) => s - (ttlprc))
-      setCurrentProduct({...currentProduct , quantity : currentProduct.quantity - 1 });
     }
     updateItem({id : props.id , quantity : count})
   }, [count]);
+
+ 
+
+
   
 
     return (<div className="flex w-[100%] h-auto items-center ">
@@ -45,7 +53,8 @@ function CartItem(props) {
                 </div>
               </div>
               <div className="  flex flex-col justify-center items-center flex-auto">
-                <Counter count={count} setCount={setCount} setOperation={setOperation} />
+                Quantity
+                <Counter id={props.id} quantity={props.quantity} count={count} setCount={setCount} setOperation={setOperation} />
                 <p className="mt-3 font-bold">
                   PRIX :<b className="ml-2 text-xl"> {ttlprc}</b>
                   DA

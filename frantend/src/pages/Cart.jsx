@@ -10,15 +10,12 @@ import CartContext from "../context/cart/CartContext";
 
 function Cart() {
   const {cartItems} = useContext(CartContext);
-// useEffect(()=>{
-// localStorage.setItem('cart',JSON.stringify(cartItems))
-// },[cartItems])
  
   let navigate = useNavigate();
   const [sum, setSum] = useState(0);
   const goBack = ()=>{navigate('/allProducts')};   
 
-  console.log({cartItems});
+ 
   return (
     <div>
       <Announce />
@@ -28,7 +25,7 @@ function Cart() {
        <CartHeader goBack={goBack}/>
 
         <div className="flex mt-7 mobile:flex-col">
-            {/* {cartData.length -> 0 ?( */}
+            {cartItems.length > 0 ?(
           <div className='flex flex-col flex-1'>
             {/* list of products */}
             {cartItems.map((item)=>{
@@ -41,13 +38,14 @@ function Cart() {
                 id={item.id}
                 src={item.src}
                 quantity={item.quantity}
+                totalQty = {item.totalQty}
                 />);
              })}
              
           </div>
 
-            {/* ):<div className=" flex flex-1 font-bold text-4xl justify-center items-center">
-              loading...</div>} */}
+             ):<div className=" flex flex-1 font-bold text-4xl justify-center items-center">
+              add some stuff...</div>} 
           <Summary sum={sum}/>
         </div>
       </div>
