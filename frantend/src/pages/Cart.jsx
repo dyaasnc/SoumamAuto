@@ -15,6 +15,7 @@ function Cart() {
   const [sum, setSum] = useState(0);
   const goBack = ()=>{navigate('/allProducts')};   
 
+ 
   return (
     <div>
       <Announce />
@@ -30,6 +31,7 @@ function Cart() {
             {cartItems.map((item)=>{
             return(
               <CartItem 
+                key={item.id}
                 price={item.price} 
                 name={item.product} 
                 setSum={setSum} 

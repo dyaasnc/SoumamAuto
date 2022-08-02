@@ -1,6 +1,6 @@
 import React from "react";
 import Announce from "../components/Announce";
-import Categories from "../components/Categories";
+// import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import TopProducts from "../components/TopProducts";
@@ -13,7 +13,7 @@ function Home() {
       <Announce />
       <NavBar />
       <Slider />
-      <Categories />
+      {/* <Categories /> */}
       <TopProducts />
       <Footer />
     </div>

@@ -5,7 +5,6 @@ import CartContext from "../context/cart/CartContext";
 
 function Counter(props) {
     const {cartItems} = useContext(CartContext)
-    const cnt = (props.count = cartItems.quantity)
    
 
   const increment = () => {

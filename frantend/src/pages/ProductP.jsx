@@ -17,10 +17,20 @@ function ProductP (){
     const location = useLocation()
     const data = location.state;
     
+
+    // useEffect(()=>{
+    //     localStorage.setItem('products', JSON.stringify(cartItems))
+    // },[cartItems])
+
+
+//    localStorage.setItem("items", JSON.stringify(items))
+
+
 const addNClose= ()=>{
     handleClose();
     addToCart(data);
 }
+
  
     
     return(<div>

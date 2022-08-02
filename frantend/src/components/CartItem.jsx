@@ -3,33 +3,37 @@ import { useState, useEffect,useContext } from "react";
 import CartContext from "../context/cart/CartContext";
 
 
+
+
 function CartItem(props) {
   
-  const {addItem,removeItem}= useContext(CartContext);
+  const {removeItem ,updateItem, cartItems}= useContext(CartContext);
+
+
   const [count, setCount] = useState(props.quantity);
   const [operation, setOperation] = useState("");
   const ttlprc = props.price * count;
+
+
+
+  // useEffect(() => {
+  //   const isFound = cartItems.find(item => item.id === props.id);
+  //   console.log({isFound});
+  // })
+
+
   useEffect(() => {
     if(operation === "plus"){
-props.setSum((s) => s + (ttlprc))
+     props.setSum((s) => s + (ttlprc))
     }else if(operation === "minus") {
-props.setSum((s) => s - (ttlprc))
+      props.setSum((s) => s - (ttlprc))
     }
-  }, [ttlprc]);
+    updateItem({id : props.id , quantity : count})
+  }, [count]);
 
-  const handleqty = (e, props)=>{
-    const cart = localStorage.getItem('cart')
-    ?JSON.parse(localStorage.getItem('cart'))
-    :[];
-  cart.forEach(element => {
-    if(element.id === props.id){
-      element.quantity = e.target.value;
-    }
-    localStorage.setItem('cart',JSON.stringify(cart))
-    addItem()
-    
-  });}
-  
+ 
+
+
   
 
     return (<div className="flex w-[100%] h-auto items-center ">
@@ -50,8 +54,7 @@ props.setSum((s) => s - (ttlprc))
               </div>
               <div className="  flex flex-col justify-center items-center flex-auto">
                 Quantity
-                {/* <Counter id={props.id} quantity={props.quantity} count={count} setCount={setCount} setOperation={setOperation} /> */}
-                <input type='number' min='1' max={props.totalQty} value={props.quantity} onChange={e =>handleqty(e, props)}/>
+                <Counter id={props.id} quantity={props.quantity} count={count} setCount={setCount} setOperation={setOperation} />
                 <p className="mt-3 font-bold">
                   PRIX :<b className="ml-2 text-xl"> {ttlprc}</b>
                   DA
