@@ -5,7 +5,8 @@ export const ApiTopPrdcts = [
     product:"Housse",
     price: 5800,
     disc: "house standard pour tt type de vehicules",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const ApiTopPrdcts = [
     product:"Housse cuir",
     price: 14000,
     disc: "",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const ApiTopPrdcts = [
     product:"accessoire",
     price: 2000,
     disc: "",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
    {
      id: 4,
@@ -29,7 +32,8 @@ export const ApiTopPrdcts = [
     product:"accessoire",
     price: 2000,
     disc: "",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
    {
      id: 5,
@@ -37,7 +41,8 @@ export const ApiTopPrdcts = [
     product:"accessoire",
     price: 2000,
     disc: "",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ export const ApiTopPrdcts = [
     product:"accessoire",
     price: 2000,
     disc: "",
-    quantity: 1
+    quantity: 1,
+    totalQty : 100,
   },
  
 ];

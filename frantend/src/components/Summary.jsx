@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../context/cart/CartContext';
 
 
 function Summary (props){
+    const {cartItems} = useContext(CartContext)
+    const summ = cartItems.reduce((currentsum, currentCartItem)=> currentsum + currentCartItem.quantity * currentCartItem.price,0)
     
-
     return(
         <div className="flex-[0.25] w-auto h-[100%] border-2 border-blue-400 rounded-md shadow-lg flex flex-col items-center">
             <h1 className="text-[2rem]">Summary</h1>
@@ -22,7 +24,7 @@ function Summary (props){
             </div>
             <div className=" mt-10 flex justify-between m-4 w-[90%] text-2xl font-bold">
               <p>Total</p>
-              <p>{props.sum}</p>
+              <p>{summ}</p>
             </div>
           </div>
     )

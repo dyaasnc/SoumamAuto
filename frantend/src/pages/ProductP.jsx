@@ -9,19 +9,18 @@ function ProductP (){
 
     const {addToCart,cartItems} = useContext(CartContext)
     
+    
     const [items,setItems]=useState([])
     
     let navigate = useNavigate();
     const handleClose = ()=>{navigate(-1)};
     const location = useLocation()
     const data = location.state;
-    // useEffect(()=>{
-    //     localStorage.setItem('products', JSON.stringify(cartItems))
-    // },[cartItems])
-
-
-//    localStorage.setItem("items", JSON.stringify(items))
-
+    
+const addNClose= ()=>{
+    handleClose();
+    addToCart(data);
+}
  
     
     return(<div>
@@ -45,7 +44,7 @@ function ProductP (){
         <p >  </p> 
         
         <div>
-        <button onClick={()=>addToCart(data)} className='btn bg-white text-blue-400'> Add to cart </button> 
+        <button onClick={addNClose} className='btn bg-white text-blue-400'> Add to cart </button> 
         </div> 
         
         </div>

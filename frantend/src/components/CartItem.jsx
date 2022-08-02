@@ -1,9 +1,11 @@
 import Counter from "./Counter";
 import { useState, useEffect,useContext } from "react";
 import CartContext from "../context/cart/CartContext";
-function CartItem(props) {
 
-  const {removeItem}= useContext(CartContext);
+
+function CartItem(props) {
+  
+  const {addItem,removeItem}= useContext(CartContext);
   const [count, setCount] = useState(props.quantity);
   const [operation, setOperation] = useState("");
   const ttlprc = props.price * count;
@@ -13,7 +15,21 @@ props.setSum((s) => s + (ttlprc))
     }else if(operation === "minus") {
 props.setSum((s) => s - (ttlprc))
     }
-  }, [count]);
+  }, [ttlprc]);
+
+  const handleqty = (e, props)=>{
+    const cart = localStorage.getItem('cart')
+    ?JSON.parse(localStorage.getItem('cart'))
+    :[];
+  cart.forEach(element => {
+    if(element.id === props.id){
+      element.quantity = e.target.value;
+    }
+    localStorage.setItem('cart',JSON.stringify(cart))
+    addItem()
+    
+  });}
+  
   
 
     return (<div className="flex w-[100%] h-auto items-center ">
@@ -33,7 +49,9 @@ props.setSum((s) => s - (ttlprc))
                 </div>
               </div>
               <div className="  flex flex-col justify-center items-center flex-auto">
-                <Counter count={count} setCount={setCount} setOperation={setOperation} />
+                Quantity
+                {/* <Counter id={props.id} quantity={props.quantity} count={count} setCount={setCount} setOperation={setOperation} /> */}
+                <input type='number' min='1' max={props.totalQty} value={props.quantity} onChange={e =>handleqty(e, props)}/>
                 <p className="mt-3 font-bold">
                   PRIX :<b className="ml-2 text-xl"> {ttlprc}</b>
                   DA
