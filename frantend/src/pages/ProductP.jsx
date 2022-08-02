@@ -15,6 +15,7 @@ function ProductP (){
     const handleClose = ()=>{navigate(-1)};
     const location = useLocation()
     const data = location.state;
+    
     // useEffect(()=>{
     //     localStorage.setItem('products', JSON.stringify(cartItems))
     // },[cartItems])

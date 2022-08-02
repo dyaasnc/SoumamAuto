@@ -3,16 +3,28 @@ import { useState, useEffect,useContext } from "react";
 import CartContext from "../context/cart/CartContext";
 function CartItem(props) {
 
-  const {removeItem}= useContext(CartContext);
+  const {removeItem ,updateItem, cartItems}= useContext(CartContext);
+  const [currentProduct , setCurrentProduct] = useState(cartItems.find(item => item.id === props.id))
   const [count, setCount] = useState(props.quantity);
   const [operation, setOperation] = useState("");
   const ttlprc = props.price * count;
+
+
+
+  // useEffect(() => {
+  //   const isFound = cartItems.find(item => item.id === props.id);
+  //   console.log({isFound});
+  // })
+
+
   useEffect(() => {
     if(operation === "plus"){
-props.setSum((s) => s + (ttlprc))
+     props.setSum((s) => s + (ttlprc))
     }else if(operation === "minus") {
-props.setSum((s) => s - (ttlprc))
+      props.setSum((s) => s - (ttlprc))
+      setCurrentProduct({...currentProduct , quantity : currentProduct.quantity - 1 });
     }
+    updateItem({id : props.id , quantity : count})
   }, [count]);
   
 
