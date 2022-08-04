@@ -12,11 +12,11 @@ function Summary (props){
 
             <div className="flex justify-between m-4 w-[90%]">
               <p>Subtotal</p>
-              <p>{props.sum}</p>
+              <p>{summ}</p>
             </div>
             <div className="flex justify-between mt-4 w-[90%]">
               <p>shipping</p>
-              <p>800DA</p>
+              <p>not available...</p>
             </div>
             <div className="flex justify-between m-4 w-[90%]">
               <p>Discount</p>
