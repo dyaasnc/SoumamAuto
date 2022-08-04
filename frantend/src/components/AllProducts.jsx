@@ -5,13 +5,13 @@ import './allProduct.css';
 
 
 
-function AllProducts (){
+function AllProducts ({prdctList}){
  
   
     return(
         <div className="flex flex-wrap p-5">
-      {ApiTopPrdcts.map((product) => (
-        <Product item={product}/>
+      {prdctList.map((product) => ( 
+        <Product item={product} key={product.id}/>
         
                            
       

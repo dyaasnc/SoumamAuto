@@ -9,7 +9,7 @@ let initialState ={
 const CartState = ({children}) =>{
 const [state, dispatch] = useReducer(CartReducer, initialState );
 useEffect(()=>{
-    localStorage.setItem('carte',JSON.stringify( state.cartItems))
+    localStorage.setItem('cart',JSON.stringify( state.cartItems))
 },[state])
 
 const addToCart = item => {

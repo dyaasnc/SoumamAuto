@@ -6,9 +6,7 @@ import CartContext from "../context/cart/CartContext";
 
 function Product({ item }) {
     const {addToCart} = useContext(CartContext)
-//   useEffect(()=>{
-// localStorage.setItem('cart',JSON.stringify(cartItems))
-// },[addToCart]);
+
     
 const navigate = useNavigate();
 
