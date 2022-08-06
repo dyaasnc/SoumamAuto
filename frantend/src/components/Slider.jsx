@@ -31,9 +31,11 @@ function Slider() {
         <ArrowBackIosIcon style={{ fontSize: "50px" }} onClick={prvSlide} />
       </div>
       {slides.map((slide, index) => {
+        
         if (index === activeSlide) {
           return (
-            <div
+            
+            <div 
               className={
                 `wrapper flex w-[100%] h-[85%] justify-center items-center shadow-2xl rounded-lg border-[#c0c0c0] border[10px] overflow-hidden relative ` +
                 slide.background

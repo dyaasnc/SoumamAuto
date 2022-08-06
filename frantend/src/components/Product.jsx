@@ -11,10 +11,10 @@ function Product({ item }) {
 const navigate = useNavigate();
 
 const handleClick = ()=>{
-  navigate("/Product",{state : item})
+  navigate('/product',{state : item})
 }
   const [hoverEffect, setHoverEffect] = useState("opacity-0");
-
+  const handleClose = ()=>{navigate(-1)};
   const handleHoverEnter = () => {
     
     setHoverEffect(" opacity-1 bg-[rgba(0,0,0,0.2)]");
@@ -23,7 +23,11 @@ const handleClick = ()=>{
     setHoverEffect(" opacity-0");
   };
   const iconStyle ='h-[40px] w-[40px] items-center justify-center rounded-full bg-white flex m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
-
+  const addNClose= ()=>{
+    
+    handleClose();
+    addToCart(item);
+}
   return (
   <div 
        
@@ -38,6 +42,7 @@ const handleClick = ()=>{
       <div  className="flex  flex-col items-center text-white bg-blue-400">
       <p className="text-2xl font-bold">{item.product}</p>
       <p className="text-2xl font-semibold">Price: {item.price}DA</p>
+      <p className='text-muted'>{item.totalQty <=0 ?'out of stock':'in stock'}</p>
       </div>
 
       </div>
@@ -52,7 +57,7 @@ const handleClick = ()=>{
         {/*icon */}
         <div  className={iconStyle}
           >
-          <ShoppingCartIcon onClick={addToCart} />
+          <ShoppingCartIcon onClick={addNClose} />
           
         </div>
         {/* <div className={iconStyle}>

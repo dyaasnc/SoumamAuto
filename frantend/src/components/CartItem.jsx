@@ -7,7 +7,7 @@ import CartContext from "../context/cart/CartContext";
 
 function CartItem(props) {
   
-  const {removeItem ,updateItem, cartItems}= useContext(CartContext);
+  const {removeItem ,updateItem}= useContext(CartContext);
 
 
   const [count, setCount] = useState(props.quantity);
@@ -16,10 +16,7 @@ function CartItem(props) {
 
 
 
-  // useEffect(() => {
-  //   const isFound = cartItems.find(item => item.id === props.id);
-  //   console.log({isFound});
-  // })
+  
 
 
   useEffect(() => {

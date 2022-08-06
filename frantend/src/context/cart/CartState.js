@@ -3,10 +3,10 @@ import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
 import {ADD_TO_CART, REMOVE_ITEMS  , UPDATE_ITEMS} from "../Types"
 
-let initialState ={
-    cartItems : JSON.parse(localStorage.getItem('carte')) || []
-};
 const CartState = ({children}) =>{
+    let initialState ={
+        cartItems : JSON.parse(localStorage.getItem('cart')) || []
+    };
 const [state, dispatch] = useReducer(CartReducer, initialState );
 useEffect(()=>{
     localStorage.setItem('cart',JSON.stringify( state.cartItems))
@@ -29,7 +29,8 @@ value={{
     cartItems:state.cartItems,
     addToCart,
     removeItem,
-    updateItem
+    updateItem,
+    
 }} >
 {children}
 </CartContext.Provider>

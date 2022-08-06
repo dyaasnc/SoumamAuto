@@ -1,10 +1,9 @@
-import { useContext, useEffect} from "react";
+
 import React from "react";
-import CartContext from "../context/cart/CartContext";
 
 
 function Counter(props) {
-    const {cartItems} = useContext(CartContext)
+
    
 
   const increment = () => {

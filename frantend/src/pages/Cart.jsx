@@ -1,11 +1,11 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useState,useContext } from "react";
 import Announce from "../components/Announce";
 import Footer from "../components/Footer";
 import CartItem from "../components/CartItem";
 import NavBar from "../components/NavBar";
 import Summary from "../components/Summary";
 import CartHeader from "../components/CartHeader";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CartContext from "../context/cart/CartContext";
 
 function Cart() {

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate, } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, useNavigate, } from 'react-router-dom';
 import { useContext } from 'react';
 import CartContext from "../context/cart/CartContext";
  import './PP.css'
@@ -7,7 +7,7 @@ import CartContext from "../context/cart/CartContext";
 function ProductP (){
     
 
-    const {addToCart,cartItems} = useContext(CartContext)
+    const {addToCart} = useContext(CartContext)
     
     
     const [items,setItems]=useState([])
@@ -18,12 +18,7 @@ function ProductP (){
     const data = location.state;
     
 
-    // useEffect(()=>{
-    //     localStorage.setItem('products', JSON.stringify(cartItems))
-    // },[cartItems])
 
-
-//    localStorage.setItem("items", JSON.stringify(items))
 
 
 const addNClose= ()=>{
@@ -33,7 +28,7 @@ const addNClose= ()=>{
 
  
     
-    return(<div>
+    return(<div className='boody'>
 
     <div className = 'card' >
         <div>

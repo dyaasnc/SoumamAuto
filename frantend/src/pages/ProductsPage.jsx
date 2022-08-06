@@ -1,4 +1,4 @@
-import React, { useState,useMemo, useEffect } from 'react';
+import React, { useState,useMemo } from 'react';
 import AllProducts from '../components/AllProducts';
 import Announce from '../components/Announce';
 import Footer from '../components/Footer';
@@ -34,7 +34,7 @@ function ProductsPage (){
             <Announce/>
             <NavBar/>          
              <div className=" m-4 flex justify-center text-4xl">Products Page</div>
-             <div className='flex justify-center'>
+             <div className='flex justify-center '>
                  <select className=' border-2 border-blue-400'
                  name="category-list"
                  id="category-list"
