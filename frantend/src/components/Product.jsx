@@ -15,6 +15,7 @@ const handleClick = ()=>{
 }
   const [hoverEffect, setHoverEffect] = useState("opacity-0");
   const handleClose = ()=>{navigate(-1)};
+  
   const handleHoverEnter = () => {
     
     setHoverEffect(" opacity-1 bg-[rgba(0,0,0,0.2)]");
@@ -24,7 +25,6 @@ const handleClick = ()=>{
   };
   const iconStyle ='h-[40px] w-[40px] items-center justify-center rounded-full bg-white flex m-3 cursor-pointer hover:scale-[1.5] hover:bg-blue-400 hover:text-white ease-in duration-100';
   const addNClose= ()=>{
-    
     handleClose();
     addToCart(item);
 }

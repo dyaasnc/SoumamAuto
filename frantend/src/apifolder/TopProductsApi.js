@@ -42,7 +42,7 @@ export const ApiTopPrdcts = [
    {
      id: 5,
     src: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.autopratic.com%2Fuploads%2Ficones-pages%2F168.jpg&f=1&nofb=1",
-    product:"produit Nettoyage Tableau De Bord",
+    product:"produit Tableau De Bord",
     price: 2000,
     disc: "",
     quantity: 1,
