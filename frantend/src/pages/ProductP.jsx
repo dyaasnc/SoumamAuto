@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useLocation, useNavigate, } from 'react-router-dom';
+import React from 'react';
+import { useLocation, } from 'react-router-dom';
 import { useContext } from 'react';
 import CartContext from "../context/cart/CartContext";
  import './PP.css'
@@ -8,25 +8,18 @@ function ProductP (props){
     
 
     const {addToCart} = useContext(CartContext)
-    
-    
-
-    
-    let navigate = useNavigate();
     const handleClose = ()=>{props.setPopup(false)};
     const location = useLocation()
     const data = location.state;
-
-
-const addNClose= ()=>{
+    const addNClose= ()=>{
     handleClose();
     addToCart(data);
     removeP()
-}
-const removeP = ()=>{
-props.setPopup(false)
-props.setBlur('')
-}
+    }
+    const removeP = ()=>{
+    props.setPopup(false)
+    props.setBlur('')
+    }
 
  
     
