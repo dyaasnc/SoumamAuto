@@ -1,23 +1,22 @@
 import React, { useState,useMemo } from 'react';
-import AllProducts from '../components/AllProducts';
+// import AllProducts from '../components/AllProducts';
 import Announce from '../components/Announce';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import { ApiTopPrdcts } from '../apifolder/TopProductsApi';
+import Product from "../components/Product";
+import ProductP from "./ProductP"
 
 
 
 function ProductsPage (){
     const [selectedCategory,setSelectedCategory]= useState();
-    const [productList,setProductList]=useState(ApiTopPrdcts);
-
+    const productList=(ApiTopPrdcts);
     const handleCategoryChange=(event)=>{
          setSelectedCategory(event.target.value)
     }
-
-   
-
-    
+    const [popup, setPopup] = useState();
+    const [blur, setBlur]= useState('')
     const filterdList=()=>{
         if(selectedCategory){
             return productList.filter((product)=>product.category === selectedCategory)
@@ -27,12 +26,12 @@ function ProductsPage (){
         }
     }
     const filteredList = useMemo(filterdList, [selectedCategory, productList]);
-    
-
+   
     return(
-        <div>
+        <div >
             <Announce/>
-            <NavBar/>          
+            <NavBar/> 
+            <div className={blur} >        
              <div className=" m-4 flex justify-center text-4xl">Products Page</div>
              <div className='flex justify-center '>
                  <select className=' border-2 border-blue-400'
@@ -42,13 +41,16 @@ function ProductsPage (){
                      <option value="" >All Products</option>
                      <option value="accessoire interieur">Accessoires D'nterieur</option>
                      <option value="accessoire exterieur">Accessoires D'exterieur</option>
-                     <option value="produits">Produits</option>
+                     <option value="produits">Produits </option>
                  </select>
                  </div>
-             <AllProducts prdctList={filteredList}/>
-            
-            
-
+                 <div className="flex flex-wrap items-center justify-center">
+               {filteredList.map((product) => ( 
+              <Product  setBlur={setBlur} setPopup={setPopup} item={product} key={product.id}/>
+              ))}
+                 </div>
+                 </div> 
+            <ProductP setBlur={setBlur} setPopup={setPopup} trigger={popup}/>
             <Footer/>
         </div>
     );

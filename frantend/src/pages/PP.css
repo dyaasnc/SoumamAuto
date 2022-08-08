@@ -1,14 +1,21 @@
 
 .boody{
-    display: flex;
-         justify-content: center; 
-         align-items: center; 
-            flex-direction: column;
+    position: fixed;
+        top: 30%;
+        left: 30%;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+        background: #fff;
+        opacity: 1;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
 }
 
 
 .card {
-    margin-top: 10px;
+    
     position: relative;
     width: 600px;
     height: 380px;

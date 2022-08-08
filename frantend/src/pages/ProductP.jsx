@@ -4,31 +4,33 @@ import { useContext } from 'react';
 import CartContext from "../context/cart/CartContext";
  import './PP.css'
 
-function ProductP (){
+function ProductP (props){
     
 
     const {addToCart} = useContext(CartContext)
     
     
-    const [items,setItems]=useState([])
+
     
     let navigate = useNavigate();
-    const handleClose = ()=>{navigate(-1)};
+    const handleClose = ()=>{props.setPopup(false)};
     const location = useLocation()
     const data = location.state;
-    
-
-
 
 
 const addNClose= ()=>{
     handleClose();
     addToCart(data);
+    removeP()
+}
+const removeP = ()=>{
+props.setPopup(false)
+props.setBlur('')
 }
 
  
     
-    return(<div className='boody'>
+    return(props.trigger)?(<div className='boody'>
 
     <div className = 'card' >
         <div>
@@ -39,7 +41,7 @@ const addNClose= ()=>{
 
         </div> <div className = 'details' >
         <h3 id='name'> {data.product} </h3> 
-        {/* <h5 id='extraN' > {data.id} </h5>  */}
+    
         <h4> product details </h4> 
         <p id='productDetail'>
         {data.disc} </p> 
@@ -53,13 +55,13 @@ const addNClose= ()=>{
         </div> 
         
         </div>
-        <button className='btn flex-end' onClick={handleClose} >Close</button>
+        <button className='btn flex-end' onClick={removeP} >Close</button>
         </div> 
         </div>
         
         
         
     </div>
-    )
+    ):'';
 }
 export default ProductP;
