@@ -1,4 +1,4 @@
-import {React,useContext, useEffect, useState} from "react";
+import {React,useContext, useState} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -31,7 +31,7 @@ function NavBar() {
       setFilterdData([]);
       setWordEntered('')
     }
- 
+
   
   
   return (
@@ -48,15 +48,15 @@ function NavBar() {
                 <input className="input outline-none mobile:w-[60px] " type="text" value={wordEntered}  onChange={handleSearch}/>
                       {wordEntered === '' ?(
                         <SearchIcon className="cursor-pointer " />
-                      ):(<CloseIcon onClick={clearInput} />)}
+                      ):(<CloseIcon className="cursor-pointer " onClick={clearInput} />)}
             </div>
                 {filterdData.length !== 0 &&(
             <div className="data-result absolute border-[2px] border-solid border-lighgrey rounded-md items-center overflow-hidden w-[195px] overflow-y-auto h-auto max-h-32 bg-white">
 
-               {filterdData.map((item )=>{
+               {filterdData.map((item)=>{
                return(
                <p key={item.id} className="cursor-pointer w-[100%] h-[30px] flex items-start to-black hover:bg-blue-300 " onClick={()=>{
-                navi('/product',{state:item})
+                navi('/ProductPage',{state:item})
                }}>
                 {item.product}
                </p>)})}

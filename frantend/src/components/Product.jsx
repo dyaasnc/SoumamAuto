@@ -1,5 +1,5 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartSharp";
-import { React,useContext , useEffect, useState } from "react";
+import { React,useContext, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import CartContext from "../context/cart/CartContext";
 
@@ -13,7 +13,7 @@ const navigate = useNavigate();
 const handleClick = ()=>{
   navigate('',{state : props.item});
   props.setPopup(true);
-  props.setBlur('blur-sm')
+  props.setBlur('blur-lg')
 }
   const [hoverEffect, setHoverEffect] = useState("opacity-0");
   const handleClose = ()=>{navigate(-1)};
@@ -33,7 +33,7 @@ const handleClick = ()=>{
   return (
   <div 
        
-      className="flex flex-1 items-center justify-center min-w-[300px] min-h-[400px] max-w-[300px] max-h-[400px] overflow-hidden rounded-lg shadow-lg m-2 relative "
+      className="flex flex-1 items-center justify-center min-w-[300px] min-h-[400px]  overflow-hidden rounded-lg shadow-lg m-2 relative "
       onMouseEnter={handleHoverEnter}
       onMouseLeave={handleHoverExit}
       onClick={handleClick}

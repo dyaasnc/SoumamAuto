@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import { ApiTopPrdcts } from '../apifolder/TopProductsApi';
 import Product from "../components/Product";
-import ProductP from "./ProductP"
+import Popup from "./Popup"
 
 
 
@@ -30,7 +30,7 @@ function ProductsPage (){
     return(
         <div >
             <Announce/>
-            <NavBar/> 
+            <NavBar setBlur={setBlur} setPopup={setPopup}/> 
             <div className={blur} >        
              <div className=" m-4 flex justify-center text-4xl">Products Page</div>
              <div className='flex justify-center '>
@@ -50,7 +50,7 @@ function ProductsPage (){
               ))}
                  </div>
                  </div> 
-            <ProductP setBlur={setBlur} setPopup={setPopup} trigger={popup}/>
+            <Popup setBlur={setBlur} setPopup={setPopup} trigger={popup}/>
             <Footer/>
         </div>
     );

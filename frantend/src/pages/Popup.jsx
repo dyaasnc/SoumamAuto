@@ -4,15 +4,13 @@ import { useContext } from 'react';
 import CartContext from "../context/cart/CartContext";
  import './PP.css'
 
-function ProductP (props){
+function Popup (props){
     
 
     const {addToCart} = useContext(CartContext)
-    const handleClose = ()=>{props.setPopup(false)};
     const location = useLocation()
     const data = location.state;
     const addNClose= ()=>{
-    handleClose();
     addToCart(data);
     removeP()
     }
@@ -57,4 +55,4 @@ function ProductP (props){
     </div>
     ):'';
 }
-export default ProductP;
+export default Popup;
