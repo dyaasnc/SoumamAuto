@@ -9,6 +9,8 @@ import {
 import ProductsPage from "./pages/ProductsPage";
 import Popup from "./pages/Popup";
 import ProductPage from "./pages/ProductPage"
+import LogIn from "./pages/LogIn";
+import SignIn from "./pages/SignIn";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
       <Route path="/allProducts" element={<ProductsPage/>}/>
       <Route path= "/Popup" element={<Popup/>}/>
       <Route path="/ProductPage" element={<ProductPage/>}/>
+      <Route path="/LogIn" element={<LogIn/>}/>
+      <Route path="/SignIn" element={<SignIn/>}/>
+
       </Routes>
   );
 }

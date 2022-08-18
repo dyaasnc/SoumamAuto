@@ -5,8 +5,8 @@ import Category from "./Category";
 
 function Categories() {
   return (
-    <div className="mb-[80px]">
-      <h1 className="pt-5 text-center font-bold text-4xl mobile:text-2xl">
+    <div className="mx-[200px] mobile:mx-2">
+      <h1 className="p-5 font-bold text-4xl mobile:text-2xl bg-blue-200">
         Categories
       </h1>
       <div className="flex justify-between  p-5">

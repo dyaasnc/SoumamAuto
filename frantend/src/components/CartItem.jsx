@@ -33,7 +33,7 @@ function CartItem(props) {
 
   
 
-    return (<div className="flex w-[100%] h-auto items-center ">
+    return (<div className="flex w-[100%] h-auto my-5 items-center mobile:border-y-2 border-blue-300 ">
               <div className="product flex self-start pl-5 overflow-hidden">
                 <img
                   className="w-[9rem] h-[9rem] rounded-lg hover:scale-[1.1] ease-in duration-300"

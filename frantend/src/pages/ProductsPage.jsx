@@ -44,10 +44,12 @@ function ProductsPage (){
                      <option value="produits">Produits </option>
                  </select>
                  </div>
-                 <div className="flex flex-wrap items-center justify-center">
+                 <div className='mx-[200px]'>
+                 <div className="flex flex-wrap items-center  justify-center">
                {filteredList.map((product) => ( 
               <Product  setBlur={setBlur} setPopup={setPopup} item={product} key={product.id}/>
               ))}
+                 </div>
                  </div>
                  </div> 
             <Popup setBlur={setBlur} setPopup={setPopup} trigger={popup}/>

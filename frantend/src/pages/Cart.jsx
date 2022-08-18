@@ -26,7 +26,7 @@ function Cart() {
 
         <div className="flex mt-7 mobile:flex-col">
             {cartItems.length > 0 ?(
-          <div className='flex flex-col flex-1'>
+          <div className='flex flex-col flex-1 '>
             {/* list of products */}
             {cartItems.map((item)=>{
             return(
