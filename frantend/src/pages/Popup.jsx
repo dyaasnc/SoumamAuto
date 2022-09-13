@@ -26,8 +26,7 @@ function Popup (props){
     <div className = 'card' >
         <div>
         <div className = 'imgBx'>
-        <img src = {data.src}
-        alt = "this is car" />
+        <img src = {data.src} alt = "this is car" />
         </div> 
 
         </div> <div className = 'details' >

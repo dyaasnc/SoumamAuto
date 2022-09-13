@@ -5,7 +5,7 @@ import LocalPostOfficeSharpIcon from "@mui/icons-material/LocalPostOfficeSharp";
 
 function Footer() {
   return (
-    <div className="flex items-center justify-around p-2 self-end">
+    <div className="flex items-center justify-around p-2 ">
       <div className="flex-1 flex flex-col flex-wrap p-2">
         <h1 className="text-[25px]">SoumamAuto</h1>
         <p className="text-justify mobile:text-left">

@@ -1,12 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+import { useLocation, useNavigate } from "react-router-dom";
 import { ApiCategories } from "../apifolder/CategoryApi";
-import Category from "./Category";
+
 
 function Categories() {
+  
+  const location = useLocation()
+  const navigate = useNavigate();
+  const goToCat = (path)=>{
+       navigate('/allProducts',{state :   path })
+  }
+  
   return (
-    <div className="mx-[200px] mobile:mx-2">
-      <h1 className="p-5 font-bold text-4xl mobile:text-2xl bg-blue-200">
+    <div className="m-[80px] mobile:m-2">
+      <h1 className="pt-5 text-center font-bold text-4xl mobile:text-2xl bg-blue-200">
         Categories
       </h1>
       <div className="flex justify-between  p-5">
@@ -22,7 +29,7 @@ function Categories() {
         <h2 className="text-white text-center font-medium text-[40px] mobile:text-[15px]">
           Accessoires D'nterieur
         </h2>
-        <button className="btn mobile:hidden">See more</button>
+        <button onClick={() => goToCat("accessoire interieur")} className="btn mobile:hidden">See more</button>
       </div>
     </div>
     
@@ -37,7 +44,7 @@ function Categories() {
         <h2 className="text-white text-center font-medium text-[40px] mobile:text-[15px]">
           Accessoires D'exterieur
         </h2>
-        <button className="btn mobile:hidden">See more</button>
+        <button onClick={() => goToCat("accessoire exterieur")} className="btn mobile:hidden">See more</button>
       </div>
     </div>
     
@@ -52,7 +59,7 @@ function Categories() {
         <h2 className="text-white text-center font-medium text-[40px] mobile:text-[15px]">
           Produits
         </h2>
-        <button className="btn mobile:hidden">See more</button>
+        <button onClick={() => goToCat("produits")} className="btn mobile:hidden">See more</button>
       </div>
     </div>
     

@@ -4,7 +4,8 @@ import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import TopProducts from "../components/TopProducts";
-import Slider from "../components/Slider";
+// import Slider from "../components/Slider";
+import PrincipalP from '../components/principalP'
 
 
 function Home() {
@@ -12,7 +13,8 @@ function Home() {
     <div>
       <Announce />
       <NavBar />
-      <Slider />
+      {/* <Slider /> */}
+      <PrincipalP/>
       <Categories />
       <TopProducts />
       <Footer />

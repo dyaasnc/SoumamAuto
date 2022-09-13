@@ -1,5 +1,6 @@
-import React, { useState,useMemo } from 'react';
+import React, { useState,useMemo, useEffect } from 'react';
 // import AllProducts from '../components/AllProducts';
+import { useLocation, useNavigate} from 'react-router-dom';
 import Announce from '../components/Announce';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
@@ -10,13 +11,23 @@ import Popup from "./Popup"
 
 
 function ProductsPage (){
-    const [selectedCategory,setSelectedCategory]= useState();
+    const location = useLocation()
+    const catig = location.state
+    const [selectedCategory,setSelectedCategory]= useState(catig);
+    
     const productList=(ApiTopPrdcts);
+    
     const handleCategoryChange=(event)=>{
          setSelectedCategory(event.target.value)
     }
     const [popup, setPopup] = useState();
     const [blur, setBlur]= useState('')
+    const ifBlur = ()=>{
+        if(blur ==='blur-lg'){
+            setBlur('')
+            setPopup()
+        }
+    }
     const filterdList=()=>{
         if(selectedCategory){
             return productList.filter((product)=>product.category === selectedCategory)
@@ -26,17 +37,19 @@ function ProductsPage (){
         }
     }
     const filteredList = useMemo(filterdList, [selectedCategory, productList]);
-   
+    
+    
     return(
         <div >
             <Announce/>
-            <NavBar setBlur={setBlur} setPopup={setPopup}/> 
-            <div className={blur} >        
+            <NavBar/> 
+            <div className={blur} onClick={ifBlur} >        
              <div className=" m-4 flex justify-center text-4xl">Products Page</div>
              <div className='flex justify-center '>
                  <select className=' border-2 border-blue-400'
                  name="category-list"
                  id="category-list"
+                 defaultValue={catig}
                  onChange={handleCategoryChange}>
                      <option value="" >All Products</option>
                      <option value="accessoire interieur">Accessoires D'nterieur</option>
