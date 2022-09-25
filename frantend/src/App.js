@@ -9,8 +9,8 @@ import {
 import ProductsPage from "./pages/ProductsPage";
 import Popup from "./pages/Popup";
 import ProductPage from "./pages/ProductPage"
-import LogIn from "./pages/LogIn";
-import SignIn from "./pages/SignIn";
+import LogIn from "./pages/register/LogIn";
+import SignIn from "./pages/register/SignIn";
 
 function App() {
   return (
