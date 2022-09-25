@@ -27,11 +27,14 @@ function ProductPage (){
 </div>
 <div className='flex justify-center items-center'>
     <div className="product bg-blue-200 w-[600px] flex items-center  mt-5 overflow-hidden mobile:grid mobile:w-auto ">
-                <img
+      <div>
+                {/* <img
                   className="w-[20rem] h-[20rem] rounded-lg hover:scale-[1.1] ease-in duration-300 overflow-hidden"
                   src={data.src}
                   alt="product_img"
-                />
+                /> */}
+                
+      </div>
                 <div className="description gap-5 flex flex-col m-5 mobile:m-0 justify-start items-start">
                   <p>
                     <b className="mr-2">ID:</b>{data.id}
